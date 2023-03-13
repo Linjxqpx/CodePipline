@@ -1,0 +1,17 @@
+﻿
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+WORKDIR /src
+
+COPY . ./
+
+RUN dotnet restore
+RUN dotnet publish -p:PublishReadyToRun=false -c Release -o ./output
+
+
+FROM public.ecr.aws/lambda/dotnet:6 AS runtime
+
+WORKDIR /app
+COPY --from=build /src/output .
+
+CMD ["DeployLambda::DeployLambda.Function::FunctionHandler"]

@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = DeployLambda
+build_property.ProjectDir = C:\projects\my\CodePipline\CodePipline\DeployLambda\
