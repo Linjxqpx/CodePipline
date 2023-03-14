@@ -5,7 +5,7 @@ phases:
         runtime-versions:
             dotnet: 6.0
 
-   pre-build:
+   pre_build:
         commands:
             - pwd
             - cd /DeployLambda
