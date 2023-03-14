@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+   install:
+        runtime-versions:
+            dotnet: 6.0
+
+   pre-build:
+        commands:
+            - cd /DeployLambda
+
+   build:
+        commands:
+            - dotnet restore
+            - dotnet publish -p:PublishReadyToRun=false -c Release -o ./output
+   artifacts:
+        files:
+            - /DeployLambda/output
+
