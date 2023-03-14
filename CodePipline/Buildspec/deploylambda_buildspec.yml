@@ -1,4 +1,5 @@
 version: 0.2
+version: 0.2
 
 phases:
    install:
@@ -7,15 +8,16 @@ phases:
 
    pre_build:
         commands:
+            - echo "current path"
             - pwd
-            - cd /DeployLambda
-            - pwd
+            - cd ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda  # CODEBUILD_SRC_DIR => AWS Codebuild 環境變數
 
    build:
         commands:
             - dotnet restore
             - dotnet publish -p:PublishReadyToRun=false -c Release -o ./output
-   artifacts:
-        files:
-            - /DeployLambda/output
+            
+artifacts:
+   files:
+      - ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda/output
 
