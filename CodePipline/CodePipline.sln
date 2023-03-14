@@ -7,7 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeployLambda", "DeployLambd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeployLambda.Tests", "DeployLambda.Tests\DeployLambda.Tests.csproj", "{4FD2F91C-D630-4FC2-980E-C83A49E3CE4F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{29FE222F-76A6-4FE4-B24B-702F9EFE7BCB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Buildspec", "Buildspec", "{29FE222F-76A6-4FE4-B24B-702F9EFE7BCB}"
+	ProjectSection(SolutionItems) = preProject
+		Buildspec\deploylambda_buildspec.yml = Buildspec\deploylambda_buildspec.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
