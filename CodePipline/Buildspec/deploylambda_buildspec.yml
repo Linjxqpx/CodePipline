@@ -19,5 +19,5 @@ phases:
             
 artifacts:
    files:
-      - ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda/output
-
+      - ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda/output/*
+   base-directory: 'output'
