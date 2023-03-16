@@ -22,5 +22,6 @@ phases:
 artifacts:
    files:
       - CodePipline/DeployLambda/output/*
+      - CodePipline/DeployLambda/dockerfile
    #扁平化資料階層
    discard-paths: yes
