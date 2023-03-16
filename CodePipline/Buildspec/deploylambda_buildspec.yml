@@ -15,7 +15,10 @@ phases:
         commands:
             - dotnet restore
             - dotnet publish -p:PublishReadyToRun=false -c Release -o ./output
-            
+   post_build:
+        commands:
+            - echo "print output 資料夾"
+            - ls ./output
 artifacts:
    files:
       - ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda/output/**/*
