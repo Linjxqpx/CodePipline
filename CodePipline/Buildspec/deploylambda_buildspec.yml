@@ -5,15 +5,23 @@ phases:
         runtime-versions:
             dotnet: 6.0
 
-   pre-build:
+   pre_build:
         commands:
-            - cd /DeployLambda
+            - echo "current path"
+            - pwd
+            - cd ${CODEBUILD_SRC_DIR}/CodePipline/DeployLambda  # CODEBUILD_SRC_DIR => AWS Codebuild 環境變數
 
    build:
         commands:
             - dotnet restore
             - dotnet publish -p:PublishReadyToRun=false -c Release -o ./output
-   artifacts:
-        files:
-            - /DeployLambda/output
-
+   post_build:
+        commands:
+            - echo "print output 資料夾"
+            - ls ./output
+artifacts:
+   files:
+      - CodePipline/DeployLambda/output/*
+      - CodePipline/DeployLambda/dockerfile
+   #扁平化資料階層
+   discard-paths: yes
