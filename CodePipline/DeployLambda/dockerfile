@@ -1,9 +1,8 @@
 ﻿
+FROM public.ecr.aws/lambda/dotnet:6 AS runtime
+
 WORKDIR /app
 
 COPY . ./
-
-FROM public.ecr.aws/lambda/dotnet:6 AS runtime
-
 
 CMD ["DeployLambda::DeployLambda.Function::FunctionHandler"]
