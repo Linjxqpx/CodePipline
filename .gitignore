@@ -7,6 +7,7 @@
 *.obj
 *.elf
 
+
 # Linker output
 *.ilk
 *.map
@@ -46,6 +47,7 @@
 *.mod*
 *.cmd
 .tmp_versions/
+CodePipline/.vs/**/*
 modules.order
 Module.symvers
 Mkfile.old
